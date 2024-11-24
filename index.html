@@ -17,63 +17,89 @@
 </head>
 
 <body>
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="cookie-banner">
-        <h2>Cookie Settings</h2>
-        <p>
-            We use cookies to improve your browsing experience. <br>By clicking "Accept All," you agree to the use of
-            all cookies.
-            <br>Click "Essential Only" to allow only necessary cookies, or "Manage Settings" to customize your
-            preferences.
-        </p>
-        <div class="actions">
-            <button id="settings-btn" class="settings-btn">Manage Settings</button>
-            <button id="essential-btn" class="essential-btn">Essential Only</button>
-            <button id="accept-btn" class="accept-btn">Accept All</button>
-        </div>
-        <br>
-        <div class="powered-by">
-            Powered by Minimalistic Consent Management
-        </div>
+    <!-- Cookie Consent Banner: First Layer -->
+<div id="cookie-banner" class="cookie-banner">
+    <h2>Cookie Settings</h2>
+    <p>
+        We use cookies to improve your browsing experience. <br>Click "Accept All" to enable all cookies and unlock the full experience.
+        <br>Click "Manage Settings" to explore other options.
+    </p>
+    <div class="actions">
+        <!-- Prominent "Accept All" button -->
+        <button id="accept-btn" class="accept-btn btn btn-primary btn-lg">
+            Accept All
+        </button>
+        
+        <!-- "Essential Only" option removed from the first layer -->
+        <!-- Subtle "Manage Settings" button -->
+        <button id="settings-btn" class="settings-btn btn btn-outline-secondary">
+            Manage Settings
+        </button>
     </div>
+    <br>
+    <div class="powered-by">
+        Powered by Minimalistic Consent Management
+    </div>
+</div>
 
-    <!-- Manage Settings Submenu -->
-    <div id="settings-menu" class="settings-menu hidden">
-        <h2>Privacy Settings</h2>
-        <p>
-            Customize your preferences for cookies. You can select which types of cookies you want to allow.
-        </p>
-        <div class="categories">
-            <div class="category">
-                <span>Marketing</span>
-                <label class="switch">
-                    <input type="checkbox" id="marketing-toggle" checked>
-                    <span class="slider round"></span>
-                </label>
-                <p>These cookies are used by advertisers to show ads relevant to your interests.</p>
-            </div>
-            <div class="category">
-                <span>Functional</span>
-                <label class="switch">
-                    <input type="checkbox" id="functional-toggle" checked>
-                    <span class="slider round"></span>
-                </label>
-                <p>These cookies help us analyze website usage and improve its performance.</p>
-            </div>
-            <div class="category">
-                <span>Essential</span>
-                <label class="switch">
-                    <input type="checkbox" id="essential-toggle" checked disabled>
-                    <span class="slider round"></span>
-                </label>
-                <p>These cookies are required to enable the core functionality of the website.</p>
-            </div>
+<!-- Cookie Consent Banner: Second Layer -->
+<div id="settings-menu" class="settings-menu hidden">
+    <h2>Privacy Settings</h2>
+    <p id="privacy-settings-text">
+        Customize your preferences for cookies. You can select which types of cookies you want to allow.
+    </p>
+    <p id="privacy-settings-text-obfuscation">
+        If you don't wish to accept cookies, deselect all possible options and select save.
+    </p>
+    <div class="categories">
+        <div class="category">
+            <span>Marketing</span>
+            <label class="switch">
+                <input type="checkbox" id="marketing-toggle" checked>
+                <span class="slider round"></span>
+            </label>
+            <p>Marketing cookies are used to provide visitors with relevant ads and marketing campaigns. These cookies track visitors across websites and collect information to provide customized ads.</p>
         </div>
-        <div class="actions">
-            <button id="save-settings-btn" class="save-settings-btn">Save Settings</button>
-            <button id="cancel-settings-btn" class="cancel-settings-btn">Cancel</button>
+        <div class="category">
+            <span>Functional</span>
+            <label class="switch">
+                <input type="checkbox" id="functional-toggle" checked>
+                <span class="slider round"></span>
+            </label>
+            <p>Functional cookies help to perform certain functionalities like sharing the content of the website on social media platforms, collect feedbacks, and other third-party features.</p>
+        </div>
+        <div class="category">
+            <span>Performance</span>
+            <label class="switch">
+                <input type="checkbox" id="performance-toggle" checked>
+                <span class="slider round"></span>
+            </label>
+            <p>Performance cookies are used to understand and analyze the key performance indexes of the website which helps in delivering a better user experience for the visitors.</p>
+        </div>
+        <div class="category">
+            <span>Analytics</span>
+            <label class="switch">
+                <input type="checkbox" id="analytics-toggle" checked>
+                <span class="slider round"></span>
+            </label>
+            <p>Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics the number of visitors, bounce rate, traffic source, etc.</p>
+        </div>
+        <div class="category">
+            <span>Essential</span>
+            <label class="switch">
+                <input type="checkbox" id="essential-toggle" checked disabled>
+                <span class="slider round"></span>
+            </label>
+            <p>These cookies are required to enable the core functionality of the website.</p>
         </div>
     </div>
+    <div class="actions">
+        <!-- "Decline All" button moved to second layer -->
+        <button id="save-settings-btn" class="save-settings-btn btn btn-success">
+            Save & Accept
+        </button>
+    </div>
+</div>
 
     <!-- Main Content -->
     <div id="main-content" class="hidden">

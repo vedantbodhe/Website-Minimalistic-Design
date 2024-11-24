@@ -42,19 +42,19 @@ button:hover {
 /* Cookie Banner and Settings Menu */
 .cookie-banner, .settings-menu {
     max-width: 500px;
+    max-height: 80vh; /* Restrict height to 80% of viewport */
     padding: 20px;
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-
-    /* Center the banner on the screen */
+    overflow-y: auto; /* Enable scrolling when content exceeds height */
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 9999; /* Ensure the banner is above other content */
+    z-index: 9999; /* Ensure banner appears above other elements */
 }
 
 /* Banner Heading */
@@ -73,6 +73,15 @@ button:hover {
     font-weight: 400; /* Regular weight for paragraphs */
     margin: 10px 0;
     color: #666;
+}
+
+#privacy-settings-text {
+    font-weight: bold; /* Makes the text bold */
+    font-size: 14px; /* Adjust the size as needed */
+}
+
+#privacy-settings-text-obfuscation {
+    font-size: 12px; /* Adjust the size as needed */
 }
 
 /* Actions Section (Buttons within Banner and Settings Menu) */
@@ -121,6 +130,21 @@ button:hover {
     opacity: 0;
     width: 0;
     height: 0;
+}
+
+.switch input:disabled + .slider {
+    background-color: #ccc; /* Grey background for the slider */
+    cursor: not-allowed; /* Change cursor to indicate it is not clickable */
+    opacity: 0.7; /* Reduce opacity to give a "disabled" effect */
+}
+
+.switch input:disabled + .slider:before {
+    background-color: #999; /* Grey for the knob */
+}
+
+/* Optional: Style for the text label */
+.category span {
+    color: #888; /* Grey out the text label */
 }
 
 .slider {
