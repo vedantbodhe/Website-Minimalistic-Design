@@ -5,6 +5,7 @@ body {
     font-family: 'Lexend', Arial, sans-serif; /* Use Lexend font with Arial fallback */
     margin: 0;
     padding: 0;
+    padding-bottom: 50px;
     height: 100vh;
     background-color: #f9f9f9;
     color: #333;
