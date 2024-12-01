@@ -41,7 +41,9 @@ button:hover {
 
 /* Cookie Banner and Settings Menu */
 .cookie-banner, .settings-menu {
+    width: 90%; /* Use a percentage width for responsiveness */
     max-width: 500px;
+    height: auto; /* Automatically adjust height */
     max-height: 80vh; /* Restrict height to 80% of viewport */
     padding: 20px;
     background-color: white;
@@ -87,6 +89,7 @@ button:hover {
 /* Actions Section (Buttons within Banner and Settings Menu) */
 .actions {
     display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
     justify-content: center;
     gap: 10px;
     margin-top: 15px;
@@ -179,5 +182,25 @@ input:checked + .slider:before {
     transform: translateX(14px);
 }
 
-/* MAIN CONTENT RELATED */
+/* MEDIA QUERY FOR SMALL SCREENS */
+@media (max-width: 768px) {
+    .cookie-banner, .settings-menu {
+        width: 95%; /* Make it almost full width on smaller screens */
+        max-width: none; /* Remove max-width limitation */
+        max-height: 90vh; /* Increase height usage for mobile */
+        padding: 15px;
+    }
 
+    .actions {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+        gap: 5px;
+    }
+
+    .cookie-banner h2, .settings-menu h2 {
+        font-size: 1.2rem; /* Reduce font size for smaller screens */
+    }
+
+    .cookie-banner p, .settings-menu p {
+        font-size: 0.9rem; /* Adjust paragraph font size */
+    }
+}
